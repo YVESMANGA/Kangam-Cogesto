@@ -2,147 +2,161 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
-// Liste des images pour le carrousel (Placeholders)
-const carouselImages = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];
+// Temps de défilement (en millisecondes)
+const SLIDE_INTERVAL = 6000;
+
+// --- 1. Définition des Slides pour le Background et le Texte (MIS À JOUR) ---
+const heroSlides = [
+  {
+    image: "h3.webp",
+    subtitle: "Expertise Comptable",
+    title: "Comptabilité Simplifiée et Reporting Clair pour vos Décisions",
+    ctaText: "Découvrez nos services comptables",
+  },
+  {
+    image: "/h6.jpg",
+    subtitle: "Gestion Financière",
+    title: "Optimisez vos Flux de Trésorerie et Augmentez vos Marges",
+    ctaText: "Planifiez votre avenir financier",
+  },
+  {
+    image: "/h4.jpg",
+    subtitle: "Audit et Conformité",
+    title: "Garantie de Conformité et Audit Rigoureux de votre Activité",
+    ctaText: "Sécurisez votre conformité",
+  },
+];
 
 // --- Composant AvatarStack (inchangé) ---
 const AvatarStack: React.FC = () => {
-  // ... (Code de AvatarStack inchangé)
   return (
     <div className="flex items-center mt-4">
+           {" "}
       <div className="flex -space-x-2">
+               {" "}
         <img
           className="w-10 h-10 rounded-full border-2 border-white object-cover z-30"
           src="/images/avatar-1.jpg" // Placeholder
           alt="Client 1"
         />
+               {" "}
         <img
           className="w-10 h-10 rounded-full border-2 border-white object-cover z-20"
           src="/images/avatar-2.jpg" // Placeholder
           alt="Client 2"
         />
+               {" "}
         <img
           className="w-10 h-10 rounded-full border-2 border-white object-cover z-10"
           src="/images/avatar-3.jpg" // Placeholder
           alt="Client 3"
         />
+             {" "}
       </div>
-
+           {" "}
       <div className="ml-4 flex items-center text-sm">
-        <FaStar className="text-yellow-400 w-5 h-5 mr-1" />
-        <p className="text-white font-semibold">4.9/5.0</p>
-        <p className="text-gray-300 ml-2">(150+ Clients Satisfaits)</p>
+        <FaStar className="text-yellow-400 w-5 h-5 mr-1" />       {" "}
+        <p className="text-white font-semibold">4.9/5.0</p>       {" "}
+        <p className="text-gray-300 ml-2">(150+ Clients Satisfaits)</p>     {" "}
       </div>
+         {" "}
     </div>
   );
 };
 
-// --- Composant ImageCarousel (MODIFIÉ avec Transition de Fondu) ---
-/**
- * Composant de Carrousel d'Images à défilement automatique avec effet de fondu.
- */
-const ImageCarousel: React.FC = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+// --- Composant Hero (Carrousel de Background et de Texte - ZOOM SUPPRIMÉ) ---
+const Hero: React.FC = () => {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0); // Logique du défilement automatique
 
   useEffect(() => {
-    // Logique pour le défilement automatique
     const interval = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % carouselImages.length
-      );
-    }, 6000); // Change toutes les 6000ms (6 secondes)
+      setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % heroSlides.length);
+    }, SLIDE_INTERVAL);
 
     return () => clearInterval(interval);
   }, []);
 
-  // L'effet de fondu est géré par la classe 'transition-opacity duration-1000'
-  // et en positionnant l'image de manière absolue au-dessus des autres.
+  const currentSlide = heroSlides[currentSlideIndex];
 
   return (
-    // Cadre externe pour simuler la bordure verte/dorée
-    <div
-      className="relative w-full max-w-sm sm:h-[400px] lg:w-[350px] lg:h-[400px] xl:w-[450px] xl:h-[500px] 
-                 bg-[#031C1A] p-3 rounded-[40px] shadow-2xl mt-8 lg:mt-0 mx-auto border-2 border-[#D4AF37]"
-    >
-      {/* Conteneur pour les images intérieures - DOIT ÊTRE RELATIVE pour les enfants ABSOLUS */}
-      <div className="w-full h-full relative overflow-hidden rounded-[30px]">
-        {carouselImages.map((src, index) => (
+    <section className="w-full relative min-h-[80vh] overflow-hidden">
+            {/* 1. Conteneur d'images de fond pour l'effet de fondu (Z-0) */}   
+       {" "}
+      <div className="absolute inset-0 z-0">
+               {" "}
+        {heroSlides.map((slide, index) => (
           <img
             key={index}
-            src={src}
-            alt={`Image de cas d'étude ${index + 1}`}
-            // CLASSE CRUCIALE : Positionne toutes les images au même endroit.
-            // La transition de l'opacité crée l'effet de fondu.
+            src={slide.image}
+            alt={`Background slide ${index + 1}`}
             className={`
-              absolute top-0 left-0 w-full h-full object-cover 
-              transition-opacity duration-1000 ease-in-out
-              ${index === currentImageIndex ? "opacity-100" : "opacity-0"}
-            `}
+              absolute inset-0 w-full h-full object-cover 
+              
+              /* UNIQUEMENT FADE (1 seconde) */
+              transition-opacity duration-1000 ease-in-out
+              
+              ${index === currentSlideIndex ? "opacity-100" : "opacity-0"}
+            `}
           />
         ))}
-
-        {/* Overlay sombre pour améliorer la lisibilité si besoin */}
-        <div className="absolute inset-0 bg-black opacity-10" />
-
-        {/* SIMULATION du badge "Best Lawyer" */}
-        <div className="absolute top-0 left-0 p-4 transform -translate-x-1 -translate-y-1 z-20">
-          {/*  */}
-        </div>
+             {" "}
       </div>
-    </div>
-  );
-};
-
-// --- Composant Hero (inchangé) ---
-const Hero: React.FC = () => {
-  const backgroundStyle: React.CSSProperties = {
-    backgroundImage: "url(mj.jpg)",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "80vh",
-    position: "relative",
-  };
-
-  return (
-    <section
-      className="styled-background-section w-full relative"
-      style={backgroundStyle}
-    >
-      {/* 1. Overlay de couleur Vert Foncé/Teal (Ombre) */}
-      <div className="absolute inset-0 bg-dark-teal-overlay opacity-65 z-0" />
-
-      {/* 2. Overlay en Dégradé Sombre (renforce l'ombre) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black opacity-100 z-0" />
-
-      {/* 3. Contenu de la Page Hero (Texte et Carrousel) */}
-      <div
-        className="relative z-10 w-full min-h-[80vh] flex flex-col lg:flex-row 
-                     items-center justify-between max-w-7xl mx-auto px-4 md:px-8"
-      >
-        {/* Contenu de Gauche (Texte, Stats, CTA) */}
-        <div className="hero-content max-w-3xl text-white py-16 lg:py-0">
-          <p className="subtitle text-lg text-light-gold font-serif mb-4">
-            Your accounting firm
+            {/* 2. Overlay de couleur Vert Foncé/Teal et Dégradé (Z-10) */}     {" "}
+      <div className="absolute inset-0 bg-dark-teal-overlay opacity-65 z-10" /> 
+         {" "}
+      <div className="absolute inset-0 bg-gradient-to-t from-black opacity-100 z-10" />
+            {/* 3. Contenu de la Page Hero (Texte et CTA) - Z-20 */}     {" "}
+      <div className="relative z-20 w-full min-h-[80vh] flex flex-col justify-center max-w-7xl mx-auto px-4 md:px-8">
+                       {" "}
+        <div
+          key={currentSlideIndex} // Clé pour forcer la transition du contenu du texte
+          className="hero-content max-w-4xl text-white py-16 opacity-100 transition-opacity duration-1000 ease-in-out"
+        >
+          {" "}
+          <p
+            className="ubtitle text-lg font-serif mtb-4 mt-4
+                           inline-block px-3 py-1 rounded-md
+                           bg-stone-800 text-light-gold"
+          >
+            {currentSlide.subtitle}         {" "}
           </p>
-
+                   {" "}
           <h1 className="title text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-8">
-            Avocats comptables expérimentés, résultats garantis
-          </h1>
-
+            {currentSlide.title}         {" "}
+          </h1>{" "}
           <a
             href="/contact"
             className="cta-button mt-8 inline-flex items-center justify-center px-8 py-4 
-                      bg-yellow-800 text-dark-text font-semibold rounded-lg shadow-xl 
-                      hover:bg-opacity-90 transition-colors"
+                      bg-yellow-800 text-dark-text font-semibold rounded-lg shadow-xl 
+                      hover:bg-opacity-90 transition-colors"
           >
-            Contactez-nous
-            <span className="ml-2">→</span>
+            {currentSlide.ctaText}            <span className="ml-2">→</span>   
+                 {" "}
           </a>
+                 {" "}
         </div>
-
-        {/* Contenu de Droite (Carrousel d'Images) */}
-        <ImageCarousel />
+                {/* --- Indicateurs de Pagination --- */}       {" "}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+                   {" "}
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlideIndex(index)}
+              aria-label={`Go to slide ${index + 1}: ${
+                heroSlides[index].subtitle
+              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlideIndex
+                  ? "bg-yellow-400 w-6"
+                  : "bg-gray-400 opacity-50 w-2"
+              }`}
+            />
+          ))}
+                 {" "}
+        </div>
+             {" "}
       </div>
+         {" "}
     </section>
   );
 };

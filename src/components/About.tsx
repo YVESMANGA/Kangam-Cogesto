@@ -36,7 +36,7 @@ const AboutUs: React.FC = () => {
             <div className="w-full max-w-sm md:max-w-md lg:absolute lg:top-0 lg:left-0 lg:w-[450px] lg:h-[450px] z-10 mb-8 lg:mb-0">
               <div className={`${frameClasses} bg-gray-200`}>
                 <img
-                  src="/a1.jpg" // Remplacer par votre chemin d'image
+                  src="/a2.jpg" // Remplacer par votre chemin d'image
                   alt="Balance de Justice"
                   className={innerImageClasses}
                 />
@@ -49,7 +49,7 @@ const AboutUs: React.FC = () => {
             <div className="w-full max-w-sm md:max-w-md lg:absolute lg:top-48 lg:left-40 lg:w-[400px] lg:h-[400px] z-20 mb-8 lg:mb-0">
               <div className={`${frameClasses} bg-gray-200`}>
                 <img
-                  src="/balance.jpeg" // Remplacer par votre chemin d'image
+                  src="/hero2.jpg" // Remplacer par votre chemin d'image
                   alt="Marteau de juge et livres"
                   className={innerImageClasses}
                 />
