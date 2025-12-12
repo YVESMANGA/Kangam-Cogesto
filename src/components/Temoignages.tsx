@@ -62,10 +62,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   isFeatured,
 }) => {
   const cardClasses = isFeatured
-    ? "bg-white text-gray-800 shadow-xl scale-[1.05] z-20 border-t-4 border-yellow-800"
+    ? "bg-white text-gray-800 shadow-xl scale-[1.05] z-20 border-t-4 border-[#2c035e]"
     : "bg-gray-100 text-gray-600 shadow-md z-10 pointer-events-none border-t-4 border-gray-200";
 
-  const accentColor = isFeatured ? "text-yellow-800" : "text-yellow-700";
+  const accentColor = isFeatured ? "text-[#2c035e]" : "text-[#2c035e]";
   const textColor = isFeatured ? "text-gray-800" : "text-gray-600";
 
   return (
@@ -78,7 +78,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             <FaStar
               key={i}
               className={`w-4 h-4 ${
-                i < rating ? "text-yellow-800" : "text-gray-300"
+                i < rating ? "text-[#2c035e]" : "text-gray-300"
               }`}
             />
           ))}
@@ -90,7 +90,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <img
           src={image} // Ceci utilise le nouveau lien fiable
           alt={name}
-          className="w-14 h-14 rounded-full object-cover border-2 border-yellow-800 mr-4"
+          className="w-14 h-14 rounded-full object-cover border-2 border-[#2c035e] mr-4"
         />
         <div>
           <p className={`font-bold text-lg ${accentColor}`}>{name}</p>
@@ -130,7 +130,7 @@ const TestimonialsSection: React.FC = () => {
           <p className="subtitle text-sm font-semibold uppercase text-gray-500 mb-2">
             Voix des clients
           </p>
-          <h2 className="title text-4xl lg:text-5xl font-serif font-bold text-gray-800">
+          <h2 className="title text-4xl lg:text-5xl font-serif font-bold text-[#2c035e]">
             Ce que disent nos clients
           </h2>
         </div>
@@ -141,7 +141,7 @@ const TestimonialsSection: React.FC = () => {
           <button
             onClick={prevSlide}
             aria-label="Previous testimonial"
-            className="absolute left-0 lg:left-[-40px] z-30 p-4 bg-white rounded-full shadow-lg text-yellow-800 hover:bg-gray-100 transition-colors"
+            className="absolute left-0 lg:left-[-40px] z-30 p-4 bg-white rounded-full shadow-lg text-[#2c035e]  transition-colors"
           >
             <FaArrowLeft className="w-5 h-5" />
           </button>
@@ -175,7 +175,7 @@ const TestimonialsSection: React.FC = () => {
           <button
             onClick={nextSlide}
             aria-label="Next testimonial"
-            className="absolute right-0 lg:right-[-40px] z-30 p-4 bg-white rounded-full shadow-lg text-yellow-800 hover:bg-gray-100 transition-colors"
+            className="absolute right-0 lg:right-[-40px] z-30 p-4 bg-white rounded-full shadow-lg text-[#2c035e] transition-colors"
           >
             <FaArrowRight className="w-5 h-5" />
           </button>

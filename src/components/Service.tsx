@@ -14,24 +14,24 @@ import {
 const servicesData = [
   {
     icon: FaGavel,
-    title: "Comptabilité",
+    title: "Expertise Comptable",
     description:
-      "La comptabilité est la science qui consiste à enregistrer, classer et interpréter les événements économiques d'une entreprise. Elle permet de connaître la situation financière et économique de l'entreprise.",
-    color: "yellow-800",
+      "Des professionnels qualifiés pour une gestion précise et transparente de vos comptes.",
+    color: "[#2c035e]",
   },
   {
     icon: FaBriefcase,
-    title: "Fiscalité",
+    title: "Gestion Financière",
     description:
-      "La fiscalité est la science qui consiste à enregistrer, classer et interpréter les événements économiques d'une entreprise. Elle permet de connaître la situation financière et économique de l'entreprise.",
-    color: "yellow-800",
+      "Optimisez vos ressources et maximisez vos performances financières grâce à des stratégies sur mesure.",
+    color: "[#2c035e]",
   },
   {
     icon: FaUserTie,
     title: "Audit",
     description:
-      "L'audit est la science qui consiste à enregistrer, classer et interpréter les événements économiques d'une entreprise. Elle permet de connaître la situation financière et économique de l'entreprise.",
-    color: "yellow-800",
+      "Un examen approfondi pour garantir la fiabilité et l’efficacité de vos processus.",
+    color: "[#2c035e]",
   },
 ];
 
@@ -55,7 +55,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       className={`group relative p-8 bg-white border border-gray-200 
                   rounded-[40px] shadow-lg transition-all duration-500 
                   hover:shadow-xl hover:border-${color} 
-                  hover:bg-yellow-50`} // CHANGEMENT DU FOND au survol (couleur très claire)
+                  hover:bg-[#2c035e]-50`} // CHANGEMENT DU FOND au survol (couleur très claire)
     >
       {/* Simulation du background décoratif (le marteau, la mallette, etc., en arrière-plan) */}
       <div className="absolute inset-0 opacity-10 rounded-[40px] p-8">
@@ -87,7 +87,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           href="#"
           className={`text-${color} font-semibold flex items-center text-sm`}
         >
-          Read More
+          Voir plus
           {/* L'icône flèche glisse légèrement vers la droite au survol de la carte (group-hover) */}
           <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
             →
@@ -108,7 +108,7 @@ const Services: React.FC = () => {
           <p className="subtitle text-sm font-semibold uppercase text-gray-500 mb-2">
             Ce que nous faisons
           </p>
-          <h2 className="title text-4xl lg:text-5xl font-serif font-bold text-gray-800">
+          <h2 className="title text-4xl lg:text-5xl font-serif font-bold text-[#2c035e]">
             Services Comptables que nous proposons
           </h2>
         </div>

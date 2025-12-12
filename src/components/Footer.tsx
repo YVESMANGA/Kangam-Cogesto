@@ -9,7 +9,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
-// --- Données du Footer ---
+// --- Données du Footer (Inchngées) ---
 
 const footerLinks = {
   pages: [
@@ -36,12 +36,12 @@ const socialMedia = [
 
 const currentYear = new Date().getFullYear();
 
-// --- Composant Footer ---
+// --- Composant Footer (Mise à jour des Couleurs) ---
 
 const Footer: React.FC = () => {
   return (
-    // Section principale du Footer avec la couleur de fond sombre
-    <footer className="bg-[#031C1A] text-gray-300">
+    // Section principale du Footer avec la couleur de fond #2c035e (Violet Foncé)
+    <footer className="bg-[#2c035e] text-gray-300">
       {/* Contenu principal du pied de page */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -55,7 +55,8 @@ const Footer: React.FC = () => {
                 <li key={link.title}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-yellow-600 transition-colors text-sm"
+                    // Nouveau hover:text: #9370DB (Accentuation)
+                    className="text-gray-400 hover:text-[#9370DB] transition-colors text-sm"
                   >
                     {link.title}
                   </a>
@@ -74,7 +75,8 @@ const Footer: React.FC = () => {
                 <li key={link.title}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-yellow-600 transition-colors text-sm"
+                    // Nouveau hover:text: #9370DB (Accentuation)
+                    className="text-gray-400 hover:text-[#9370DB] transition-colors text-sm"
                   >
                     {link.title}
                   </a>
@@ -85,14 +87,15 @@ const Footer: React.FC = () => {
 
           {/* 3. Logo et Description (Centrale) */}
           <div className="lg:col-span-1 text-center lg:text-left flex flex-col items-center lg:items-start">
-            {/* Logo Placeholder - Remplacer par votre composant ou image réel */}
+            {/* Logo Placeholder */}
             <div className="mb-4">
-              {/* Le logo doit être ici - J'utilise un placeholder pour le style */}
-              <div className="text-yellow-600 text-3xl font-bold font-serif">
-                {/*  */}
+              <div className="text-[#9370DB] text-3xl font-bold font-serif">
+                {" "}
+                {/* Couleur du logo : #9370DB (Accentuation) */}
+                {/*  */}
                 COGESTO
                 <p className="text-xs font-sans font-light tracking-widest text-gray-400">
-                  Cabinet Comptable
+                  Finance, Management de la performance
                 </p>
               </div>
             </div>
@@ -109,7 +112,9 @@ const Footer: React.FC = () => {
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  className="p-2 bg-[#0C302F] rounded-full text-gray-400 hover:bg-yellow-800 hover:text-white transition-colors"
+                  // Fond des icônes : #3c1e69 (Couleur Secondaire)
+                  // Hover : Fond et Texte en #9370DB (Accentuation)
+                  className="p-2 bg-[#3c1e69] rounded-full text-gray-400 hover:bg-[#9370DB] hover:text-white transition-colors"
                 >
                   <item.icon className="w-4 h-4" />
                 </a>
@@ -121,7 +126,8 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2 lg:pl-16">
             {/* Localisation */}
             <div className="flex items-start mb-6">
-              <FaMapMarkerAlt className="w-5 h-5 text-yellow-800 mt-1 mr-4 flex-shrink-0" />
+              {/* Icônes : #9370DB (Accentuation) */}
+              <FaMapMarkerAlt className="w-5 h-5 text-[#9370DB] mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">
                   Location
@@ -135,7 +141,8 @@ const Footer: React.FC = () => {
 
             {/* Téléphone */}
             <div className="flex items-start mb-6">
-              <FaPhoneAlt className="w-5 h-5 text-yellow-800 mt-1 mr-4 flex-shrink-0" />
+              {/* Icônes : #9370DB (Accentuation) */}
+              <FaPhoneAlt className="w-5 h-5 text-[#9370DB] mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">Phone</h4>
                 <p className="text-sm text-gray-400">+221 33 868 43 11</p>
@@ -144,7 +151,8 @@ const Footer: React.FC = () => {
 
             {/* Email */}
             <div className="flex items-start">
-              <FaEnvelope className="w-5 h-5 text-yellow-800 mt-1 mr-4 flex-shrink-0" />
+              {/* Icônes : #9370DB (Accentuation) */}
+              <FaEnvelope className="w-5 h-5 text-[#9370DB] mt-1 mr-4 flex-shrink-0" />
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
                 <p className="text-sm text-gray-400">
@@ -157,10 +165,12 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Ligne de Séparation */}
-      <hr className="border-t border-[#0C302F] mx-auto max-w-7xl" />
+      {/* Couleur de la bordure : #3c1e69 (Couleur Secondaire) */}
+      <hr className="border-t border-[#3c1e69] mx-auto max-w-7xl" />
 
       {/* Barre de Copyright */}
-      <div className="bg-[#0C302F] py-4">
+      {/* Fond : #3c1e69 (Couleur Secondaire) */}
+      <div className="bg-[#3c1e69] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
           Copyright © {currentYear} Kangam. All Rights Reserved.
         </div>

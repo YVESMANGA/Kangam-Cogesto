@@ -10,19 +10,22 @@ const heroSlides = [
   {
     image: "h3.webp",
     subtitle: "Expertise Comptable",
-    title: "Comptabilité Simplifiée et Reporting Clair pour vos Décisions",
+    title:
+      "Des professionnels qualifiés pour une gestion précise et transparente de vos comptes.",
     ctaText: "Découvrez nos services comptables",
   },
   {
     image: "/h6.jpg",
     subtitle: "Gestion Financière",
-    title: "Optimisez vos Flux de Trésorerie et Augmentez vos Marges",
+    title:
+      "Optimisez vos ressources et maximisez vos performances financières grâce à des stratégies sur mesure.",
     ctaText: "Planifiez votre avenir financier",
   },
   {
-    image: "/h4.jpg",
+    image: "/a.jpg",
     subtitle: "Audit et Conformité",
-    title: "Garantie de Conformité et Audit Rigoureux de votre Activité",
+    title:
+      "Un examen approfondi pour garantir la fiabilité et l’efficacité de vos processus.",
     ctaText: "Sécurisez votre conformité",
   },
 ];
@@ -121,13 +124,13 @@ const Hero: React.FC = () => {
             {currentSlide.subtitle}         {" "}
           </p>
                    {" "}
-          <h1 className="title text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-8">
+          <h1 className="title text-5xl sm:text-5xl md:text-6xl font-bold leading-tight mb-8">
             {currentSlide.title}         {" "}
           </h1>{" "}
           <a
             href="/contact"
             className="cta-button mt-8 inline-flex items-center justify-center px-8 py-4 
-                      bg-yellow-800 text-dark-text font-semibold rounded-lg shadow-xl 
+                      bg-[#2c035e] text-dark-text font-semibold rounded-lg shadow-xl 
                       hover:bg-opacity-90 transition-colors"
           >
             {currentSlide.ctaText}            <span className="ml-2">→</span>   
@@ -147,8 +150,8 @@ const Hero: React.FC = () => {
               }`}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlideIndex
-                  ? "bg-yellow-400 w-6"
-                  : "bg-gray-400 opacity-50 w-2"
+                  ? "bg-[#2c035e] w-6"
+                  : "bg-[#2c035e] opacity-50 w-2"
               }`}
             />
           ))}

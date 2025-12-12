@@ -27,7 +27,7 @@ const navLinks: { name: string; hasDropdown: boolean }[] = [
  * Composant de la barre supérieure (informations de contact et sociaux).
  */
 const TopBar: React.FC = () => (
-  <div className="top-bar bg-green-900 text-white text-sm py-2 px-4 sm:px-8 flex justify-between items-center">
+  <div className="top-bar bg-[#2c035e] text-white text-sm py-2 px-4 sm:px-8 flex justify-between items-center">
     {/* Section de gauche: Infos de contact (Caché sur Mobile, Visible sur Tablette/Desktop) */}
     <div className="info-group hidden sm:flex items-center space-x-6">
       {/* Téléphone et Localisation sur UNE SEULE LIGNE */}
@@ -87,13 +87,19 @@ const MainHeader: React.FC<{ toggleMenu: () => void }> = ({ toggleMenu }) => (
   <div className="main-header bg-white flex justify-between items-center px-4 sm:px-8 py-4 shadow-md">
     {/* Logo Section */}
     <div className="logo-container flex items-center space-x-3">
-      <div className="logo-icon p-3 border border-gray-200 rounded-full bg-yellow-100">
-        <span className="text-2xl text-green-900">⚖️</span>
+      <div className="logo-image p-1  ">
+        <img
+          src="/logoc.png"
+          alt="Logo Cogesto"
+          className="w-18 h-10"
+          /* Note : J'ai laissé "w-10 h-10" pour une taille standard. 
+         Si l'image est un logo vectoriel/transparent, vous pouvez ajuster. */
+        />
       </div>
       <div className="text-left leading-none">
-        <p className="font-bold text-xl text-green-900">COGESTO</p>
+        <p className="font-bold text-xl text-[#2c035e]">COGESTO</p>
         <p className="text-xs text-gray-700 tracking-wider mt-1">
-          Cabinet Comptable
+          Finance, Management de la performance
         </p>
       </div>
     </div>

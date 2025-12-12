@@ -13,9 +13,9 @@ const AboutUs: React.FC = () => {
   const frameClasses =
     "w-full h-full relative overflow-hidden rounded-[40px] shadow-xl transform transition-all duration-300 hover:scale-[1.03]";
   const innerImageClasses = "w-full h-full object-cover";
-  const primaryColorClasses = "text-yellow-800";
+  const primaryColorClasses = "text-[#2c035e]";
   const buttonClasses =
-    "cta-button inline-flex items-center justify-center px-6 py-3 bg-yellow-800 text-white font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-colors";
+    "cta-button inline-flex items-center justify-center px-6 py-3 bg-[#2c035e] text-white font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-colors";
 
   const listPoints = [
     "Comité pour l'excellence dans la pratique comptable.",
@@ -49,7 +49,7 @@ const AboutUs: React.FC = () => {
             <div className="w-full max-w-sm md:max-w-md lg:absolute lg:top-48 lg:left-40 lg:w-[400px] lg:h-[400px] z-20 mb-8 lg:mb-0">
               <div className={`${frameClasses} bg-gray-200`}>
                 <img
-                  src="/hero2.jpg" // Remplacer par votre chemin d'image
+                  src="/AUDIT1.jpg" // Remplacer par votre chemin d'image
                   alt="Marteau de juge et livres"
                   className={innerImageClasses}
                 />
@@ -73,10 +73,11 @@ const AboutUs: React.FC = () => {
 
             {/* Paragraphe d'introduction */}
             <p className="mb-8 text-lg text-gray-600">
-              Notre équipe d'avocats comptables a une diversité de compétences,
-              couvrant un large spectre de domaines comptables. Nous nous
-              spécialisons dans la comptabilité, la fiscalité, la gestion des
-              entreprises.
+              Le partenaire stratégique de votre entreprise qui offre des
+              services professionnels à forte valeur ajoutée. Grâce à un
+              leadership affirmé et un réseau très diversifié, Cogesto Audit
+              accompagne les entreprises dans la gestion de leur croissance, et
+              l’optimisation de leur performance financière.
             </p>
 
             {/* Liste des points forts */}

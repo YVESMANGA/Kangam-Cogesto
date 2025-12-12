@@ -42,7 +42,7 @@ const AttorneyCard: React.FC<AttorneyCardProps> = ({ name, title, image }) => {
   return (
     <div
       className="w-full bg-[#031C1A] rounded-[40px] overflow-hidden 
-                 shadow-lg border-b-4 border-yellow-800 transition-transform duration-300 hover:scale-[1.02]"
+                 shadow-lg border-b-4 border-white transition-transform duration-300 hover:scale-[1.02]"
     >
       <img
         src={image}
@@ -123,7 +123,7 @@ const AttorneysSection: React.FC = () => {
   return (
     <section className="w-full relative py-20 md:py-32" style={backgroundStyle}>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#031C1A] opacity-70 z-0" />
+      <div className="absolute inset-0 bg-[#2c035e] opacity-70 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contenu principal : Texte à gauche, Carrousel à droite */}
@@ -131,15 +131,15 @@ const AttorneysSection: React.FC = () => {
           {/* Contenu de Gauche (Texte et CTA) */}
           <div className="w-full lg:w-1/3 text-white text-center lg:text-left pt-12">
             <p className="text-sm font-light text-gray-300 mb-2">
-              Nos Avocats Comptables
+              Nos Experts Comptables
             </p>
             <h2 className="text-4xl lg:text-5xl font-serif font-bold leading-tight mb-8">
-              Avocats Comptables Dévoués, Résultats Provenus
+              Experts Comptables Dévoués, Résultats Provenus
             </h2>
             <a
               href="/our-team"
               className="inline-flex items-center justify-center px-8 py-3 
-                         bg-yellow-800 text-white font-semibold rounded-lg shadow-xl 
+                         bg-white text-[#2c035e] font-semibold rounded-lg shadow-xl 
                          hover:bg-opacity-90 transition-colors"
             >
               En savoir plus
@@ -154,7 +154,7 @@ const AttorneysSection: React.FC = () => {
               <button
                 onClick={prevCard}
                 aria-label="Previous attorney"
-                className="p-3 bg-white bg-opacity-20 rounded-full text-yellow-800 hover:bg-opacity-40 transition-colors"
+                className="p-3 bg-white bg-opacity-20 rounded-full text-[#2c035e] hover:bg-opacity-40 transition-colors"
               >
                 <FaArrowLeft className="w-5 h-5" />
               </button>

@@ -153,7 +153,7 @@ const AnimatedStat: React.FC<AnimatedStatProps> = ({
 const StatsBar: React.FC = () => {
   return (
     // Conteneur principal avec la couleur de fond et les coins arrondis
-    <div className="bg-yellow-800 rounded-xl shadow-xl mx-auto max-w-7xl px-4 py-8 sm:py-12 -mt-16 relative z-10">
+    <div className="bg-[#2c035e] rounded-xl shadow-xl mx-auto max-w-7xl px-4 py-8 sm:py-12 -mt-16 relative z-10">
       <div className="flex flex-col sm:flex-row justify-around items-center text-white text-center gap-8 sm:gap-4">
         {/* UTILISATION DU NOUVEAU COMPOSANT ANIMATEDSTAT */}
         {statsData.map((stat, index) => (
