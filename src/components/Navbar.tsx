@@ -97,7 +97,7 @@ const MainHeader: React.FC<{ toggleMenu: () => void }> = ({ toggleMenu }) => (
         />
       </div>
       <div className="text-left leading-none">
-        <p className="font-bold text-xl text-[#2c035e]">COGESTO</p>
+        <p className="font-bold text-xl text-[#2c035e]">COGESTO AUDIT</p>
         <p className="text-xs text-gray-700 tracking-wider mt-1">
           Finance, Management de la performance
         </p>

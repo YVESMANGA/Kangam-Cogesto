@@ -12,7 +12,7 @@ const testimonialsData = [
   {
     quote:
       "Une équipe dévouée, professionnelle et hautement efficace. Ils ont géré mon cas commercial complexe avec diligence et ont obtenu un résultat bien au-delà de mes attentes. Leurs conseils étaient toujours clairs et ponctuels.",
-    name: "John F. Smith",
+    name: "Lamine Cissoko",
     title: "CEO, TechInnovate",
     image: "/user.png", // Lien fiable (Unsplash)
     rating: 5,
@@ -20,7 +20,7 @@ const testimonialsData = [
   {
     quote:
       "J'ai bénéficié de la meilleure représentation juridique possible. La procédure s'est déroulée sans stress et j'ai été soutenue à chaque étape. Je recommande vivement leurs services en droit de la famille.",
-    name: "Maria L. Gomez",
+    name: "Marie Antoinette Faye",
     title: "Client Prive",
     image: "/user.png",
     rating: 5,
@@ -28,7 +28,7 @@ const testimonialsData = [
   {
     quote:
       "J'ai bénéficié de la meilleure représentation juridique possible. La procédure s'est déroulée sans stress et j'ai été soutenue à chaque étape. Je recommande vivement leurs services en droit de la famille.",
-    name: "Alex R. Chen",
+    name: "Moussa Thiam",
     title: "Managing Partner, RealCorp",
     image: "/user.png",
     rating: 4,
@@ -36,7 +36,7 @@ const testimonialsData = [
   {
     quote:
       "Une expertise inégalée en matière de litiges. L'équipe s'est montrée stratégique, combative lorsque nécessaire et toujours transparente quant à l'avancement du dossier. Une véritable excellence juridique.",
-    name: "David T. Williams",
+    name: "Leopold Ndong",
     title: "Entrepreneur",
     image: "/user.png",
     rating: 5,

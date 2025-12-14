@@ -5,7 +5,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // --- Données des Avocats (inchangé) ---
 const attorneysData = [
   {
-    name: "Sarah Rahman",
+    name: "Moustapha",
     title: "Comptable",
     image: "/user.png",
   },
@@ -15,18 +15,8 @@ const attorneysData = [
     image: "/pdg.jpg",
   },
   {
-    name: "Michel Phelps",
+    name: "Aicha",
     title: "Comptable",
-    image: "/user.png",
-  },
-  {
-    name: "Jessica Chen",
-    title: "Comptable",
-    image: "/user.png",
-  },
-  {
-    name: "David Lee",
-    title: "Assistant",
     image: "/user.png",
   },
 ];

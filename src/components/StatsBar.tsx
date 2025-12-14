@@ -58,20 +58,18 @@ const IconAward = ({ className }: { className: string }) => (
 
 // --- Liste des statistiques (ajout d'une valeur numérique pour l'animation) ---
 const statsData = [
-  { icon: IconScale, value: "10k+", finalValue: 10000, label: "Case Done" },
   {
     icon: IconExpert,
-    value: "12k+",
-    finalValue: 12000,
-    label: "Expert Avocats Comptables",
+    value: "+10",
+    finalValue: 10000,
+    label: "Experts en audit",
   },
   {
     icon: IconClients,
-    value: "15k+",
+    value: "+20",
     finalValue: 15000,
     label: "Clients Satisfaits",
   },
-  { icon: IconAward, value: "20k+", finalValue: 20000, label: "Prime" },
 ];
 
 // --- NOUVEAU COMPOSANT : Gère l'animation d'un seul chiffre ---

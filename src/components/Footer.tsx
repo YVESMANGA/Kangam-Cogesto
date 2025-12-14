@@ -89,11 +89,11 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1 text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Logo Placeholder */}
             <div className="mb-4">
-              <div className="text-[#9370DB] text-3xl font-bold font-serif">
+              <div className="text-[#9370DB] text-2xl font-bold font-serif">
                 {" "}
                 {/* Couleur du logo : #9370DB (Accentuation) */}
                 {/*  */}
-                COGESTO
+                COGESTO AUDIT
                 <p className="text-xs font-sans font-light tracking-widest text-gray-400">
                   Finance, Management de la performance
                 </p>
